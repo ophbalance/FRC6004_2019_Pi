@@ -1,16 +1,18 @@
-sudo apt-get purge wolfram-engine
-sudo apt-get purge libreoffice*
-sudo apt-get clean
-sudo apt-get autoremove
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install build-essential cmake unzip pkg-config
-sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-sudo apt-get install libxvidcore-dev libx264-dev
-sudo apt-get install libgtk-3-dev
-sudo apt-get install libcanberra-gtk*
-sudo apt-get install libatlas-base-dev gfortran
-sudo apt-get install python3-dev
+#!/bin/bash
+
+sudo yes | apt-get purge wolfram-engine
+sudo yes | apt-get purge libreoffice*
+sudo yes | apt-get clean
+sudo yes | apt-get autoremove
+sudo yes | apt-get update && sudo apt-get upgrade
+sudo yes | apt-get install build-essential cmake unzip pkg-config
+sudo yes | apt-get install libjpeg-dev libpng-dev libtiff-dev
+sudo yes | apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo yes | apt-get install libxvidcore-dev libx264-dev
+sudo yes | apt-get install libgtk-3-dev
+sudo yes | apt-get install libcanberra-gtk*
+sudo yes | apt-get install libatlas-base-dev gfortran
+sudo yes | apt-get install python3-dev
 cd ~
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.0-alpha.zip
 wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.0-alpha.zip
