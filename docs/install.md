@@ -43,6 +43,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_TESTS=OFF \
     -D INSTALL_PYTHON_EXAMPLES=OFF \
     -D BUILD_EXAMPLES=OFF ..
+sudo sed -i 's/100/1024/g' /etc/dphys-swapfile
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start    
 make 
 sudo make install
 sudo ldconfig
@@ -52,3 +55,6 @@ cd ~
 git clone https://github.com/robotpy/pynetworktables.git
 cd pynetworktables
 python setup.py install
+sudo sed -i 's/1024/100/g' /etc/dphys-swapfile
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start    
